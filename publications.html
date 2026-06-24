@@ -8,6 +8,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300..700;1,300..400&family=Inter:wght@300..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.pub-abstract {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+.pub-abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: var(--space-3);
+  transition: color var(--transition);
+}
+.pub-abstract-toggle:hover { color: var(--color-primary); }
+.pub-abstract-toggle svg { transition: transform 0.2s; }
+.pub-abstract-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.pub-abstract[hidden] { display: none; }
+</style>
 </head>
 <body>
 
@@ -20,7 +48,7 @@
     <div class="container--wide">
       <span class="page-header-tag">Research Output</span>
       <h1>Publications</h1>
-      <p>Peer-reviewed articles, conference papers, preprints, and editorials from the Digital C-Fiber group.</p>
+      <p>Peer-reviewed articles, conference papers, and preprints from the Digital C-Fiber group.</p>
     </div>
   </div>
 
@@ -30,6 +58,7 @@
       <div class="section-group">
         <div class="section-group-title">2026</div>
         <div class="pub-list">
+
           <div class="pub-card">
             <div class="pub-card-head">
               <span class="pub-year">2026</span>
@@ -38,17 +67,26 @@
             <div class="pub-authors">Troglio A, Fiebig A, Maxion A, Kutafina E, Namer B</div>
             <div class="pub-journal">Sci Rep. 2026 Mar 12;16(1):8975</div>
             <div class="pub-tags"><span class="pub-tag red">Data Analysis</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2026-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2026-1" class="pub-abstract" hidden>
+              Microneurography allows recordings of peripheral human C-fibers in vivo. Spike detection and sorting are essential preprocessing steps but remain challenging due to the single-electrode setup, low signal-to-noise ratio, and overlapping spike waveforms. We propose a hybrid approach combining knowledge-driven features derived from the biophysical properties of C-fibers with data-driven machine learning models to improve both spike detection and sorting robustness across diverse recording conditions.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.1038/s41598-026-41561-9" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/41820449/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="section-group">
         <div class="section-group-title">2025</div>
         <div class="pub-list">
+
           <div class="pub-card">
             <div class="pub-card-head">
               <span class="pub-year">2025</span>
@@ -57,6 +95,13 @@
             <div class="pub-authors">Maxion A, Turkin A, Namer B, Tigerholm J, Kutafina E</div>
             <div class="pub-journal">bioRxiv. 2025 Sep 24; doi: 10.1101/2025.09.24.678232</div>
             <div class="pub-tags"><span class="pub-tag red">Modelling</span><span class="pub-tag">Preprint</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2025-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2025-1" class="pub-abstract" hidden>
+              Unmyelinated axons exhibit activity-dependent changes in conduction velocity — a phenomenon termed axonal memory. We present a model integrating a physiological memory framework (linear long-term and non-linear short-term components) with a data-driven approach, enabling efficient prediction of conduction velocity changes from spike train history. The model is calibrated and validated on human microneurography recordings and provides a computationally tractable tool for large-scale simulations of C-fiber populations.
+            </div>
             <div class="pub-links">
               <a href="https://www.biorxiv.org/content/10.1101/2025.09.24.678232v1" class="pub-link" target="_blank" rel="noopener">bioRxiv</a>
               <a href="https://doi.org/10.1101/2025.09.24.678232" class="pub-link" target="_blank" rel="noopener">DOI</a>
@@ -69,8 +114,15 @@
               <div class="pub-title"><a href="https://doi.org/10.1109/EMBC58623.2025.11253764" target="_blank" rel="noopener">Explainable Spike Detection Algorithm on C-fiber Microneurography Data using Weighted Hermite Variable Projection Neural Networks</a></div>
             </div>
             <div class="pub-authors">Darabos D, Troglio A, Fiebig A, Maxion A, Kutafina E, Namer B, Bognar G, Kovacs P</div>
-            <div class="pub-journal">Annu Int Conf IEEE Eng Med Biol Soc. 2025;2025:1-7</div>
+            <div class="pub-journal">Annu Int Conf IEEE Eng Med Biol Soc. 2025;2025:1–7</div>
             <div class="pub-tags"><span class="pub-tag red">Data Analysis</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2025-2" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2025-2" class="pub-abstract" hidden>
+              Spike detection in C-fiber microneurography is hindered by a low signal-to-noise ratio and high variability of spike shapes. We propose an explainable spike detection method using Weighted Hermite Variable Projection Neural Networks (WH-VPNN), which decompose spike waveforms into interpretable Hermite basis functions. The approach achieves competitive detection performance while providing per-spike explainability, facilitating quality control and clinical translation of automated MNG analysis pipelines.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.1109/EMBC58623.2025.11253764" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/41337204/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
@@ -85,6 +137,13 @@
             <div class="pub-authors">Troglio A, Konradi P, Fiebig A, Pérez Garriga A, Röhrig R, Dunham J, Kutafina E, Namer B</div>
             <div class="pub-journal">PLoS One. 2025 Sep 26;20(9):e0329537</div>
             <div class="pub-tags"><span class="pub-tag red">Data Analysis</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2025-3" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2025-3" class="pub-abstract" hidden>
+              Microneurography recordings of human C-nociceptors present a severe spike sorting challenge: single-electrode acquisition, low signal-to-noise ratio, and potential multi-unit activity. We systematically evaluate the feasibility of supervised spike sorting on a curated dataset of human C-fiber recordings. We assess multiple feature extraction and classification strategies and identify conditions under which reliable automated sorting is achievable, providing practical guidelines for researchers applying machine learning to MNG data.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.1371/journal.pone.0329537" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/41004469/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
@@ -96,28 +155,44 @@
               <span class="pub-year">2025</span>
               <div class="pub-title"><a href="https://doi.org/10.1097/j.pain.0000000000003445" target="_blank" rel="noopener">Harmonizing neuropathic pain research: outcomes of the London consensus meeting on peripheral tissue studies</a></div>
             </div>
-            <div class="pub-authors">Villa S, Aasvang EK, Attal N, Baron R, ..., Kutafina E, ..., Denk F</div>
-            <div class="pub-journal">Pain. 2025 May 1;166(5):994-1001</div>
+            <div class="pub-authors">Villa S, Aasvang EK, Attal N, Baron R, …, Kutafina E, …, Denk F</div>
+            <div class="pub-journal">Pain. 2025 May 1;166(5):994–1001</div>
             <div class="pub-tags"><span class="pub-tag green">FAIR &amp; Open Data</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2025-4" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2025-4" class="pub-abstract" hidden>
+              Neuropathic pain research suffers from limited reproducibility and comparability across studies, partly due to heterogeneous methods for peripheral tissue collection and analysis. This article reports outcomes of a consensus meeting held in London, bringing together leading experts to harmonize protocols for peripheral tissue studies in neuropathic pain research. Recommendations cover tissue collection, processing, molecular assays, and data reporting standards, with the aim of improving cross-site comparability and enabling meta-analyses.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.1097/j.pain.0000000000003445" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/39432804/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="section-group">
         <div class="section-group-title">2024</div>
         <div class="pub-list">
+
           <div class="pub-card">
             <div class="pub-card-head">
               <span class="pub-year">2024</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI240836" target="_blank" rel="noopener">Semi-Automatic Export of Electrophysiological Metadata to NFDI4Health Local Data Hubs: Use Case of Microneurography odML-Tables</a></div>
             </div>
             <div class="pub-authors">Elwes MR, Troglio A, Abedi M, Golebiewski M, Meineke F, Kirsten T, Namer B, Beyan O, Kutafina E</div>
-            <div class="pub-journal">Stud Health Technol Inform. 2024 Aug 30;317:40-48</div>
+            <div class="pub-journal">Stud Health Technol Inform. 2024 Aug 30;317:40–48</div>
             <div class="pub-tags"><span class="pub-tag green">FAIR &amp; Open Data</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2024-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2024-1" class="pub-abstract" hidden>
+              FAIR data sharing in electrophysiology requires structured metadata export pipelines. We present a semi-automatic workflow for exporting microneurography metadata, encoded in odML-Tables, to NFDI4Health Local Data Hubs (LDH) based on the FAIRDOM-SEEK platform. The pipeline maps domain-specific odML metadata to the LDH schema and reduces manual curation effort, demonstrated through a real microneurography use case. This contributes a reusable component for FAIR electrophysiology data management within the German health research data infrastructure.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3233/SHTI240836" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/39234705/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
@@ -130,32 +205,27 @@
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI240420" target="_blank" rel="noopener">Harmonizing Microneurography Metadata with Local Data Hubs: A Concept</a></div>
             </div>
             <div class="pub-authors">Elwes MR, Namer B, Troglio A, Kirsten T, Beyan O, Kutafina E</div>
-            <div class="pub-journal">Stud Health Technol Inform. 2024 Aug 22;316:358-359</div>
+            <div class="pub-journal">Stud Health Technol Inform. 2024 Aug 22;316:358–359</div>
             <div class="pub-tags"><span class="pub-tag green">FAIR &amp; Open Data</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2024-2" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2024-2" class="pub-abstract" hidden>
+              We present a concept for harmonizing microneurography metadata with NFDI4Health Local Data Hubs, leveraging the odML metadata standard and the FAIRDOM-SEEK platform. The proposed approach defines a mapping between MNG-specific metadata fields and the LDH schema, paving the way for semi-automatic metadata deposition and improved FAIRness of electrophysiology research data.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3233/SHTI240420" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/39176750/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="section-group">
         <div class="section-group-title">2023</div>
         <div class="pub-list">
-          <div class="pub-card">
-            <div class="pub-card-head">
-              <span class="pub-year">2023</span>
-              <div class="pub-title"><a href="https://doi.org/10.3389/fnetp.2023.1297536" target="_blank" rel="noopener">Editorial: Network of pain signaling: from ion channels to brain</a></div>
-            </div>
-            <div class="pub-authors">Kutafina E, Becker S, Namer B</div>
-            <div class="pub-journal">Front Netw Physiol. 2023;3:1297536</div>
-            <div class="pub-tags"><span class="pub-tag red">Review</span></div>
-            <div class="pub-links">
-              <a href="https://doi.org/10.3389/fnetp.2023.1297536" class="pub-link" target="_blank" rel="noopener">DOI</a>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/38020244/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
-            </div>
-          </div>
 
           <div class="pub-card">
             <div class="pub-card-head">
@@ -163,8 +233,15 @@
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI230687" target="_blank" rel="noopener">odML-Tables as a Metadata Standard in Microneurography</a></div>
             </div>
             <div class="pub-authors">Troglio A, Nickerson A, Schlebusch F, Röhrig R, Dunham J, Namer B, Kutafina E</div>
-            <div class="pub-journal">Stud Health Technol Inform. 2023 Sep 12;307:3-11</div>
+            <div class="pub-journal">Stud Health Technol Inform. 2023 Sep 12;307:3–11</div>
             <div class="pub-tags"><span class="pub-tag green">FAIR &amp; Open Data</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2023-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2023-1" class="pub-abstract" hidden>
+              Reproducible microneurography research requires standardized metadata capture. We introduce odML-Tables as a practical metadata standard for microneurography experiments, enabling structured recording of experimental parameters in a spreadsheet-compatible format aligned with the open metadata markup language (odML). We describe the schema design, tooling, and a validation study across multiple MNG datasets from different labs, demonstrating feasibility and adoption pathways for the community.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3233/SHTI230687" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/37697832/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
@@ -177,8 +254,15 @@
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI230144" target="_blank" rel="noopener">odML-Tables as a Metadata Standard in Microneurography (abstract)</a></div>
             </div>
             <div class="pub-authors">Troglio A, Schlebusch F, Röhrig R, Dunham J, Namer B, Kutafina E</div>
-            <div class="pub-journal">Stud Health Technol Inform. 2023 May 18;302:368-369</div>
+            <div class="pub-journal">Stud Health Technol Inform. 2023 May 18;302:368–369</div>
             <div class="pub-tags"><span class="pub-tag green">FAIR &amp; Open Data</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2023-2" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2023-2" class="pub-abstract" hidden>
+              Conference abstract introducing odML-Tables as a candidate metadata standard for microneurography. We outline the motivation, structure, and initial design of the standard, covering key experimental parameters and alignment with existing neurophysiology metadata frameworks.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3233/SHTI230144" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/37203689/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
@@ -193,31 +277,26 @@
             <div class="pub-authors">Kutafina E, Becker S, Namer B</div>
             <div class="pub-journal">Front Netw Physiol. 2023;3:1099282</div>
             <div class="pub-tags"><span class="pub-tag red">Review</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2023-3" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2023-3" class="pub-abstract" hidden>
+              Pain and nociception are complex, multidimensional phenomena measured at scales ranging from ion channels to brain networks. This transdisciplinary review surveys computational and experimental methods for quantifying pain and nociception, including electrophysiology, psychophysics, neuroimaging, and computational modelling. We highlight methodological challenges, discuss cross-scale integration, and identify opportunities where computational approaches can bridge experimental silos to advance the mechanistic understanding of pain.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3389/fnetp.2023.1099282" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/36926544/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
 
-          <div class="pub-card">
-            <div class="pub-card-head">
-              <span class="pub-year">2023</span>
-              <div class="pub-title"><a href="https://doi.org/10.3389/fncom.2023.1149849" target="_blank" rel="noopener">Corrigendum: Decoding neuropathic pain: Can we predict fluctuations of propagation speed in stimulated peripheral nerve?</a></div>
-            </div>
-            <div class="pub-authors">Kutafina E, Troglio A, de Col R, Röhrig R, Rossmanith P, Namer B</div>
-            <div class="pub-journal">Front Comput Neurosci. 2023;17:1149849</div>
-            <div class="pub-tags"><span class="pub-tag red">Modelling</span></div>
-            <div class="pub-links">
-              <a href="https://doi.org/10.3389/fncom.2023.1149849" class="pub-link" target="_blank" rel="noopener">DOI</a>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/36814933/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="section-group">
         <div class="section-group-title">2022</div>
         <div class="pub-list">
+
           <div class="pub-card">
             <div class="pub-card-head">
               <span class="pub-year">2022</span>
@@ -226,49 +305,75 @@
             <div class="pub-authors">Kutafina E, Troglio A, de Col R, Röhrig R, Rossmanith P, Namer B</div>
             <div class="pub-journal">Front Comput Neurosci. 2022;16:899584</div>
             <div class="pub-tags"><span class="pub-tag red">Modelling</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2022-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2022-1" class="pub-abstract" hidden>
+              To understand neural encoding of neuropathic pain, evoked and resting activity of peripheral human C-fibers are studied via microneurography experiments. Before different spiking patterns can be analyzed, spike sorting is necessary to distinguish the activity of particular fibers of a recorded bundle. Due to single-electrode measurements and high noise contamination, standard methods based on spike shapes are insufficient and need to be enhanced with additional information. Such information can be derived from the activity-dependent slowing of the fiber propagation speed, which in turn can be assessed by introducing continuous "background" 0.125&ndash;0.25 Hz electrical stimulation. In this article, we model the changes in the propagation speed resulting from the history of fiber activity with polynomial regression, assessing the feasibility of using the developed models to enhance spike shape-based sorting.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3389/fncom.2022.899584" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/35966281/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="section-group">
         <div class="section-group-title">2021</div>
         <div class="pub-list">
+
           <div class="pub-card">
             <div class="pub-card-head">
               <span class="pub-year">2021</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI210556" target="_blank" rel="noopener">openMNGlab: Data Analysis Framework for Microneurography — A Technical Report</a></div>
             </div>
             <div class="pub-authors">Schlebusch F, Kehrein F, Röhrig R, Namer B, Kutafina E</div>
-            <div class="pub-journal">Stud Health Technol Inform. 2021;283:165-171</div>
+            <div class="pub-journal">Stud Health Technol Inform. 2021;283:165–171</div>
             <div class="pub-tags"><span class="pub-tag green">Data Analysis</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2021-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2021-1" class="pub-abstract" hidden>
+              openMNGlab is an open-source software framework for data analysis tailored for the specific needs of microneurography — a type of electrophysiological technique particularly important for research on peripheral neural fibers. Currently, openMNGlab loads data from Spike2 and Dapsys, the two major data acquisition solutions in MNG. By building on top of the Neo software, openMNGlab can be easily extended to handle common electrophysiological data formats. It provides methods for data visualization, fiber tracking, and a modular feature database to extract features for data analysis and machine learning.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.3233/SHTI210556" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/34545832/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="section-group">
         <div class="section-group-title">2014</div>
         <div class="pub-list">
+
           <div class="pub-card">
             <div class="pub-card-head">
               <span class="pub-year">2014</span>
               <div class="pub-title"><a href="https://doi.org/10.1152/jn.00777.2012" target="_blank" rel="noopener">Modeling activity-dependent changes of axonal spike conduction in primary afferent C-nociceptors</a></div>
             </div>
             <div class="pub-authors">Tigerholm J, Petersson ME, Obreja O, Lampert A, Carr R, Schmelz M, Fransén E</div>
-            <div class="pub-journal">J Neurophysiol. 2014 May;111(9):1721-35</div>
+            <div class="pub-journal">J Neurophysiol. 2014 May;111(9):1721–35</div>
             <div class="pub-tags"><span class="pub-tag red">Modelling</span></div>
+            <button class="pub-abstract-toggle" aria-expanded="false" aria-controls="abs-2014-1" onclick="toggleAbstract(this)">
+              Abstract
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"/></svg>
+            </button>
+            <div id="abs-2014-1" class="pub-abstract" hidden>
+              Action potential initiation and conduction along peripheral axons is a dynamic process that displays pronounced activity dependence. In patients with neuropathic pain, differences in the modulation of axonal conduction velocity by activity suggest that this property may provide insight into pathomechanisms. We constructed a comprehensive mathematical model of human cutaneous C-fibers reproducing axonal spike propagation at a velocity of 0.69 m/s commensurate with recordings from human C-nociceptors. Activity-dependent slowing (ADS) of propagation velocity was adequately simulated; the property most readily associated with ADS was an increase in intra-axonal sodium concentration, affecting the driving potential of sodium currents. The model also reproduced post-action potential excitability changes observed in vivo, and was validated against ion channel blockade, temperature, and extracellular ion concentration experiments.
+            </div>
             <div class="pub-links">
               <a href="https://doi.org/10.1152/jn.00777.2012" class="pub-link" target="_blank" rel="noopener">DOI</a>
               <a href="https://pubmed.ncbi.nlm.nih.gov/24371290/" class="pub-link" target="_blank" rel="noopener">PubMed</a>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -278,6 +383,15 @@
 </main>
 
 <div id="site-footer"></div>
+<script>
+function toggleAbstract(btn) {
+  const id = btn.getAttribute('aria-controls');
+  const el = document.getElementById(id);
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  if (expanded) { el.setAttribute('hidden', ''); } else { el.removeAttribute('hidden'); }
+}
+</script>
 <script src="main.js" defer></script>
 </body>
 </html>

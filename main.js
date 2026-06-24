@@ -7,8 +7,10 @@ async function loadPartials() {
     fetch('footer.html').then(r => r.text())
   ]);
 
-  document.getElementById('site-header').outerHTML = headerHTML;
-  document.getElementById('site-footer').outerHTML = footerHTML;
+  const headerEl = document.getElementById('site-header');
+  const footerEl = document.getElementById('site-footer');
+  if (headerEl) headerEl.innerHTML = headerHTML;
+  if (footerEl) footerEl.innerHTML = footerHTML;
 
   // Mark active nav links
   document.querySelectorAll(`[data-page="${page}"]`).forEach(el => el.classList.add('active'));

@@ -1,4 +1,4 @@
-// Theme
+// Theme toggle
 const themeToggle = document.querySelector('[data-theme-toggle]');
 const html = document.documentElement;
 const saved = localStorage.getItem('theme') || 'light';
@@ -36,3 +36,19 @@ function closeMobileNav() {
 closeBtn?.addEventListener('click', closeMobileNav);
 mobileNav?.addEventListener('click', e => { if (e.target === mobileNav) closeMobileNav(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+
+// Repository filter buttons
+const filterBtns = document.querySelectorAll('.filter-btn');
+const repoCards = document.querySelectorAll('.repo-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    repoCards.forEach(card => {
+      const show = filter === 'all' || card.dataset.category === filter;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});

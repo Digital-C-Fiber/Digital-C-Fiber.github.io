@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital C-Fiber Research Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300..700;1,300..400&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mobile-nav-header">
+    <div class="site-logo">
+      <img src="https://avatars.githubusercontent.com/u/119848926?v=4" alt="Digital C-Fiber logo" width="36" height="36">
+      <span class="site-logo-text">Digital C-Fiber</span>
+    </div>
+    <button class="close-btn" id="closeNav" aria-label="Close navigation">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="mobile-nav-link active">Home</a>
+    <a href="repositories.html" class="mobile-nav-link">Repositories</a>
+    <a href="publications.html" class="mobile-nav-link">Publications</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo" aria-label="Digital C-Fiber home">
+      <img src="https://avatars.githubusercontent.com/u/119848926?v=4" alt="Digital C-Fiber logo" width="40" height="40" loading="eager">
+      <div class="site-logo-text">
+        Digital C-Fiber
+        <span>Research Group</span>
+      </div>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="repositories.html" class="nav-link">Repositories</a>
+      <a href="publications.html" class="nav-link">Publications</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
+      <button class="mobile-menu-btn" id="openNav" aria-label="Open navigation menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
+          FAIR Data · Simulational Modelling · MNG Analysis
+        </div>
+        <h1>Decoding peripheral nerve signals to understand <em>neuropathic pain</em></h1>
+        <p class="hero-desc">
+          We develop computational tools, open-source software, and FAIR data standards
+          to advance the analysis of C-fiber microneurography recordings in humans.
+        </p>
+        <div class="hero-actions">
+          <a href="repositories.html" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Explore Repositories
+          </a>
+          <a href="publications.html" class="btn btn-outline">
+            View Publications
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img src="https://avatars.githubusercontent.com/u/119848926?v=4" alt="" width="160" height="160">
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stat-strip" aria-label="Group at a glance">
+    <div class="container--wide">
+      <div class="stat-grid">
+        <div class="stat-item">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Research Areas</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12+</span>
+          <span class="stat-label">Open-Source Repos</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Publications</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">FAIR</span>
+          <span class="stat-label">Data Principles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH DIRECTIONS -->
+  <section class="section" aria-labelledby="research-title">
+    <div class="container--wide">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title" id="research-title">Three core research directions</h2>
+        <p class="section-desc">
+          Our work connects computational modelling, electrophysiology data analysis,
+          and open science infrastructure for microneurography research.
+        </p>
+      </div>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-card-icon red" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+          </div>
+          <h3>FAIR Microneurography</h3>
+          <p>We build metadata standards, open data pipelines, and infrastructure for FAIR sharing of microneurography data — including odML-based templates and integration with NFDI4Health Local Data Hubs.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-card-icon green" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+          </div>
+          <h3>Simulational Modelling of Peripheral Nerves</h3>
+          <p>We implement biophysical models of unmyelinated C-fiber axons and DRG somas based on Hodgkin-Huxley equations, and develop machine-learning models to predict activity-dependent conduction velocity changes.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-card-icon red" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Microneurography Data Analysis</h3>
+          <p>We develop and benchmark supervised spike sorting algorithms for noisy single-electrode recordings, using a marking-method ground-truth protocol, and build open frameworks for end-to-end MNG data analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);" aria-labelledby="team-title">
+    <div class="container--wide">
+      <div class="section-header">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title" id="team-title">The team</h2>
+        <p class="section-desc">An interdisciplinary group spanning neuroscience, biomedical informatics, and computational methods.</p>
+      </div>
+      <div style="margin-bottom: var(--space-8);">
+        <h3 style="font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: var(--space-4);">Initiators</h3>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">EK</div>
+            <div class="team-info">
+              <div class="team-name">Ekaterina Kutafina</div>
+              <div class="team-role">Initiator</div>
+              <div class="team-affil">University Hospital Cologne</div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">BN</div>
+            <div class="team-info">
+              <div class="team-name">Barbara Namer</div>
+              <div class="team-role">Initiator</div>
+              <div class="team-affil">University Hospital Würzburg</div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">JT</div>
+            <div class="team-info">
+              <div class="team-name">Jenny Tigerholm</div>
+              <div class="team-role">Initiator</div>
+              <div class="team-affil">University Hospital RWTH Aachen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: var(--space-4);">Key Contributors</h3>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">AT</div>
+            <div class="team-info">
+              <div class="team-name">Alina Troglio</div>
+              <div class="team-role">Contributor</div>
+              <div class="team-affil">University Hospital Cologne</div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">PK</div>
+            <div class="team-info">
+              <div class="team-name">Peter Konradi</div>
+              <div class="team-role">Contributor</div>
+              <div class="team-affil">Western Norway University of Applied Sciences</div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">AM</div>
+            <div class="team-info">
+              <div class="team-name">Anna Maxion</div>
+              <div class="team-role">Contributor</div>
+              <div class="team-affil">University Hospital RWTH Aachen</div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">DB</div>
+            <div class="team-info">
+              <div class="team-name">David Berlinger</div>
+              <div class="team-role">Contributor</div>
+              <div class="team-affil">University Hospital RWTH Aachen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" aria-labelledby="cta-title">
+    <div class="container--narrow" style="text-align: center;">
+      <span class="section-label">Get Involved</span>
+      <h2 class="section-title" id="cta-title" style="margin-inline: auto;">Open science, open code</h2>
+      <p class="section-desc" style="margin-inline: auto; margin-bottom: var(--space-8);">
+        All our tools are open-source and available on GitHub. We welcome contributions, collaborations, and questions from the community.
+      </p>
+      <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+        <a href="https://github.com/Digital-C-Fiber" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub Organization
+        </a>
+        <a href="#repositories" class="btn btn-outline" data-page="repositories">
+          Browse Repositories
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== PAGE: REPOSITORIES ===== -->
+<div class="page"
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="https://avatars.githubusercontent.com/u/119848926?v=4" alt="Digital C-Fiber logo" width="36" height="36" loading="lazy">
+        <span class="footer-logo-text">Digital C-Fiber</span>
+      </div>
+      <p class="footer-tagline">Open-source computational tools and FAIR data standards for microneurography and neuropathic pain research.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Navigation</div>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="repositories.html">Repositories</a></li>
+        <li><a href="publications.html">Publications</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Resources</div>
+      <ul class="footer-links" role="list">
+        <li><a href="https://github.com/Digital-C-Fiber" target="_blank" rel="noopener noreferrer">GitHub Organization</a></li>
+        <li><a href="https://github.com/Digital-C-Fiber/openMNGlab" target="_blank" rel="noopener noreferrer">openMNGlab</a></li>
+        <li><a href="https://github.com/Digital-C-Fiber/PyDapsys" target="_blank" rel="noopener noreferrer">PyDapsys</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Digital C-Fiber Research Group · Content licensed CC-BY unless noted otherwise</span>
+    <a href="https://github.com/Digital-C-Fiber/Digital-C-Fiber-webpage" target="_blank" rel="noopener noreferrer" class="footer-gh-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      Edit on GitHub
+    </a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ---- THEME TOGGLE ----
+  const root = document.documentElement;
+  let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+
+  const toggleBtn = document.querySelector('[data-theme-toggle]');
+  function updateToggleIcon() {
+    if (!toggleBtn) return;
+    toggleBtn.innerHTML = theme === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    toggleBtn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+  }
+  updateToggleIcon();
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateToggleIcon();
+    });
+  }
+
+  // ---- ROUTER ----
+  function getPage() {
+    const hash = location.hash.replace('#', '') || 'home';
+    return ['home', 'repositories', 'publications'].includes(hash) ? hash : 'home';
+  }
+
+  function navigate(pageName) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Show target
+    const target = document.getElementById('page-' + pageName);
+    if (target) target.classList.add('active');
+    // Update nav links
+    document.querySelectorAll('[data-page]').forEach(link => {
+      link.classList.toggle('active', link.dataset.page === pageName);
+    });
+    // Update hash
+    history.pushState(null, '', '#' + pageName);
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    // Close mobile nav
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Intercept all data-page links
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('[data-page]');
+    if (!link) return;
+    e.preventDefault();
+    navigate(link.dataset.page);
+  });
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function () {
+    navigate(getPage());
+  });
+
+  // Initial load
+  navigate(getPage());
+
+  // ---- MOBILE NAV ----
+  document.getElementById('openNav').addEventListener('click', function () {
+    document.getElementById('mobileNav').classList.add('open');
+    this.setAttribute('aria-expanded', 'true');
+  });
+  document.getElementById('closeNav').addEventListener('click', function () {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.getElementById('openNav').setAttribute('aria-expanded', 'false');
+  });
+
+  // ---- PUBLICATION FILTERS ----
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      document.querySelectorAll('#pubList .pub-card').forEach(card => {
+        const tags = card.dataset.tags || '';
+        const show = filter === 'all' || tags.includes(filter);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+})();
+</script>
+
+<script>
+function toggleAbstract(btn) {
+  const abs = btn.nextElementSibling;
+  const open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!open));
+  if (open) { abs.hidden = true; btn.textContent = btn.textContent.replace('Hide','Show'); }
+  else { abs.hidden = false; btn.textContent = btn.textContent.replace('Show','Hide'); }
+}
+</script>
+
+<script src="main.js" defer></script>
+</body>
+</html>

@@ -22,26 +22,6 @@
     }
   });
 
-  // ---- PAGE NAVIGATION ----
-  function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    const target = document.getElementById('page-' + pageId);
-    if (target) target.classList.add('active');
-    document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
-      link.classList.toggle('active', link.dataset.page === pageId);
-    });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  document.addEventListener('click', e => {
-    const link = e.target.closest('[data-page]');
-    if (link) {
-      e.preventDefault();
-      showPage(link.dataset.page);
-      closeMobileNav();
-    }
-  });
-
   // ---- MOBILE NAV ----
   const mobileNav = document.getElementById('mobileNav');
   const openBtn = document.getElementById('openNav');
@@ -62,28 +42,20 @@
 
   if (openBtn) openBtn.addEventListener('click', openMobileNav);
   if (closeBtn) closeBtn.addEventListener('click', closeMobileNav);
+  mobileNav && mobileNav.addEventListener('click', e => { if (e.target === mobileNav) closeMobileNav(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
 
-  mobileNav && mobileNav.addEventListener('click', e => {
-    if (e.target === mobileNav) closeMobileNav();
+  // ---- ACTIVE NAV LINK ----
+  const path = location.pathname.replace(/\/+$/, '') || '/';
+  document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+    const href = link.getAttribute('href').replace(/\/+$/, '') || '/';
+    if (path.endsWith(href.replace(/^\./, ''))) link.classList.add('active');
   });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeMobileNav();
-  });
-
-  // ---- SHOW HOME ON LOAD ----
-  showPage('home');
 })();
 
 function toggleAbstract(btn) {
   const abs = btn.nextElementSibling;
   const open = btn.getAttribute('aria-expanded') === 'true';
   btn.setAttribute('aria-expanded', String(!open));
-  if (open) {
-    abs.hidden = true;
-    btn.textContent = btn.textContent.replace('Hide', 'Show');
-  } else {
-    abs.hidden = false;
-    btn.textContent = btn.textContent.replace('Show', 'Hide');
-  }
+  abs.hidden = open;
 }

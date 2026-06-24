@@ -1,6 +1,6 @@
-title: Digital C-fiber Webpage
-description: Overview of the team work
-baseurl: ""                # leave empty for user/organization site
-url: "https://digital-c-fiber.github.io/Digital-C-Fiber-webpage/"  # replace with your GitHub username
+title: Digital C-Fiber Research Group
+description: Computational models of human C-fibers for neuropathic pain research
+baseurl: ""
+url: "https://digital-c-fiber.github.io"
 theme: minima
 markdown: kramdown

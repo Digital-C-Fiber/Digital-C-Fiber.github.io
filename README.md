@@ -32,4 +32,4 @@ Then visit `http://localhost:8000`.
 
 ## License
 
-Website content © Digital C-Fiber Collaborative Group, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+© 2024–2026 Digital C-Fiber Collaborative Group. All rights reserved.

@@ -12,6 +12,15 @@ async function loadPartials() {
   if (headerEl) headerEl.innerHTML = headerHTML;
   if (footerEl) footerEl.innerHTML = footerHTML;
 
+  // Inject favicon
+  if (!document.querySelector('link[rel~="icon"]')) {
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = 'https://avatars.githubusercontent.com/u/119848926?v=4';
+    link.type = 'image/png';
+    document.head.appendChild(link);
+  }
+
   // Mark active nav links
   document.querySelectorAll(`[data-page="${page}"]`).forEach(el => el.classList.add('active'));
 

@@ -35,6 +35,80 @@
 .pub-abstract-toggle svg { transition: transform 0.2s; }
 .pub-abstract-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
 .pub-abstract[hidden] { display: none; }
+
+/* ---- Publications toolbar ---- */
+.pub-toolbar {
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(10px) saturate(1.3);
+  border-bottom: 1px solid var(--color-divider);
+  position: sticky;
+  top: 60px; /* below site header */
+  z-index: 90;
+  padding: var(--space-3) 0;
+}
+.pub-toolbar-inner {
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+.pub-toolbar-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+.pub-toolbar-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  white-space: nowrap;
+}
+.pub-toolbar-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--color-divider);
+  flex-shrink: 0;
+}
+.year-btn {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+.year-btn:hover { border-color: var(--color-primary); color: var(--color-primary); text-decoration: none; }
+.tag-filter-btn {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.tag-filter-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.tag-filter-btn.active.red  { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.tag-filter-btn.active.green { background: var(--color-green); border-color: var(--color-green); color: #fff; }
+.tag-filter-btn.active.all  { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+
+/* hidden pub card when filtered out */
+.pub-card[hidden] { display: none; }
+/* empty year group */
+.section-group[data-empty="true"] { display: none; }
 </style>
 </head>
 <body>
@@ -52,14 +126,40 @@
     </div>
   </div>
 
+  <!-- Sticky toolbar: year jumps + tag filters -->
+  <div class="pub-toolbar" id="pub-toolbar">
+    <div class="pub-toolbar-inner">
+      <div class="pub-toolbar-group">
+        <span class="pub-toolbar-label">Jump to</span>
+        <a class="year-btn" href="#year-2026">2026</a>
+        <a class="year-btn" href="#year-2025">2025</a>
+        <a class="year-btn" href="#year-2024">2024</a>
+        <a class="year-btn" href="#year-2023">2023</a>
+        <a class="year-btn" href="#year-2022">2022</a>
+        <a class="year-btn" href="#year-2021">2021</a>
+        <a class="year-btn" href="#year-2014">2014</a>
+      </div>
+      <div class="pub-toolbar-sep"></div>
+      <div class="pub-toolbar-group">
+        <span class="pub-toolbar-label">Filter</span>
+        <button class="tag-filter-btn active all" data-tag="all" onclick="filterByTag(this)">All</button>
+        <button class="tag-filter-btn red" data-tag="Modelling" onclick="filterByTag(this)">Modelling</button>
+        <button class="tag-filter-btn red" data-tag="Data Analysis" onclick="filterByTag(this)">Data Analysis</button>
+        <button class="tag-filter-btn red" data-tag="Review" onclick="filterByTag(this)">Review</button>
+        <button class="tag-filter-btn green" data-tag="FAIR &amp; Open Data" onclick="filterByTag(this)">FAIR &amp; Open Data</button>
+        <button class="tag-filter-btn" data-tag="Preprint" onclick="filterByTag(this)">Preprint</button>
+      </div>
+    </div>
+  </div>
+
   <section class="section" aria-label="Publications list">
     <div class="container--wide">
 
-      <div class="section-group">
+      <div class="section-group" id="year-2026">
         <div class="section-group-title">2026</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Data Analysis">
             <div class="pub-card-head">
               <span class="pub-year">2026</span>
               <div class="pub-title"><a href="https://doi.org/10.1038/s41598-026-41561-9" target="_blank" rel="noopener">Hybrid knowledge- and data-driven modelling for robust spike detection and sorting in human C-fiber microneurography</a></div>
@@ -83,11 +183,11 @@
         </div>
       </div>
 
-      <div class="section-group">
+      <div class="section-group" id="year-2025">
         <div class="section-group-title">2025</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Modelling Preprint">
             <div class="pub-card-head">
               <span class="pub-year">2025</span>
               <div class="pub-title"><a href="https://www.biorxiv.org/content/10.1101/2025.09.24.678232v1" target="_blank" rel="noopener">Modeling the Memory of Unmyelinated Axons: Integration of a Data-Driven Approach with Physiological Memory Concept</a></div>
@@ -108,7 +208,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Data Analysis">
             <div class="pub-card-head">
               <span class="pub-year">2025</span>
               <div class="pub-title"><a href="https://doi.org/10.1109/EMBC58623.2025.11253764" target="_blank" rel="noopener">Explainable Spike Detection Algorithm on C-fiber Microneurography Data using Weighted Hermite Variable Projection Neural Networks</a></div>
@@ -129,7 +229,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Data Analysis">
             <div class="pub-card-head">
               <span class="pub-year">2025</span>
               <div class="pub-title"><a href="https://doi.org/10.1371/journal.pone.0329537" target="_blank" rel="noopener">Supervised spike sorting feasibility of noisy single-electrode extracellular recordings: Systematic study of human C-nociceptors recorded via microneurography</a></div>
@@ -150,7 +250,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="FAIR &amp; Open Data">
             <div class="pub-card-head">
               <span class="pub-year">2025</span>
               <div class="pub-title"><a href="https://doi.org/10.1097/j.pain.0000000000003445" target="_blank" rel="noopener">Harmonizing neuropathic pain research: outcomes of the London consensus meeting on peripheral tissue studies</a></div>
@@ -174,11 +274,11 @@
         </div>
       </div>
 
-      <div class="section-group">
+      <div class="section-group" id="year-2024">
         <div class="section-group-title">2024</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="FAIR &amp; Open Data">
             <div class="pub-card-head">
               <span class="pub-year">2024</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI240836" target="_blank" rel="noopener">Semi-Automatic Export of Electrophysiological Metadata to NFDI4Health Local Data Hubs: Use Case of Microneurography odML-Tables</a></div>
@@ -199,7 +299,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="FAIR &amp; Open Data">
             <div class="pub-card-head">
               <span class="pub-year">2024</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI240420" target="_blank" rel="noopener">Harmonizing Microneurography Metadata with Local Data Hubs: A Concept</a></div>
@@ -223,11 +323,11 @@
         </div>
       </div>
 
-      <div class="section-group">
+      <div class="section-group" id="year-2023">
         <div class="section-group-title">2023</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Modelling">
             <div class="pub-card-head">
               <span class="pub-year">2023</span>
               <div class="pub-title"><a href="https://doi.org/10.3389/fncom.2023.1265958" target="_blank" rel="noopener">A modelling study to dissect the potential role of voltage-gated ion channels in activity-dependent conduction velocity changes as identified in small fiber neuropathy patients</a></div>
@@ -248,7 +348,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="FAIR &amp; Open Data">
             <div class="pub-card-head">
               <span class="pub-year">2023</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI230687" target="_blank" rel="noopener">odML-Tables as a Metadata Standard in Microneurography</a></div>
@@ -269,7 +369,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="FAIR &amp; Open Data">
             <div class="pub-card-head">
               <span class="pub-year">2023</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI230144" target="_blank" rel="noopener">odML-Tables as a Metadata Standard in Microneurography (abstract)</a></div>
@@ -290,7 +390,7 @@
             </div>
           </div>
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Review">
             <div class="pub-card-head">
               <span class="pub-year">2023</span>
               <div class="pub-title"><a href="https://doi.org/10.3389/fnetp.2023.1099282" target="_blank" rel="noopener">Measuring pain and nociception: Through the glasses of a computational scientist. Transdisciplinary overview of methods</a></div>
@@ -314,11 +414,11 @@
         </div>
       </div>
 
-      <div class="section-group">
+      <div class="section-group" id="year-2022">
         <div class="section-group-title">2022</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Modelling">
             <div class="pub-card-head">
               <span class="pub-year">2022</span>
               <div class="pub-title"><a href="https://doi.org/10.3389/fncom.2022.899584" target="_blank" rel="noopener">Decoding Neuropathic Pain: Can We Predict Fluctuations of Propagation Speed in Stimulated Peripheral Nerve?</a></div>
@@ -342,11 +442,11 @@
         </div>
       </div>
 
-      <div class="section-group">
+      <div class="section-group" id="year-2021">
         <div class="section-group-title">2021</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Data Analysis">
             <div class="pub-card-head">
               <span class="pub-year">2021</span>
               <div class="pub-title"><a href="https://doi.org/10.3233/SHTI210556" target="_blank" rel="noopener">openMNGlab: Data Analysis Framework for Microneurography — A Technical Report</a></div>
@@ -370,11 +470,11 @@
         </div>
       </div>
 
-      <div class="section-group">
+      <div class="section-group" id="year-2014">
         <div class="section-group-title">2014</div>
         <div class="pub-list">
 
-          <div class="pub-card">
+          <div class="pub-card" data-tags="Modelling">
             <div class="pub-card-head">
               <span class="pub-year">2014</span>
               <div class="pub-title"><a href="https://doi.org/10.1152/jn.00777.2012" target="_blank" rel="noopener">Modeling activity-dependent changes of axonal spike conduction in primary afferent C-nociceptors</a></div>
@@ -411,6 +511,36 @@ function toggleAbstract(btn) {
   const expanded = btn.getAttribute('aria-expanded') === 'true';
   btn.setAttribute('aria-expanded', !expanded);
   if (expanded) { el.setAttribute('hidden', ''); } else { el.removeAttribute('hidden'); }
+}
+
+function filterByTag(btn) {
+  const tag = btn.getAttribute('data-tag');
+
+  // Update active button state
+  document.querySelectorAll('.tag-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Show/hide pub cards
+  document.querySelectorAll('.pub-card').forEach(card => {
+    if (tag === 'all') {
+      card.removeAttribute('hidden');
+    } else {
+      const cardTags = card.getAttribute('data-tags') || '';
+      // decode HTML entities for comparison
+      const decoded = cardTags.replace(/&amp;/g, '&');
+      if (decoded.includes(tag)) {
+        card.removeAttribute('hidden');
+      } else {
+        card.setAttribute('hidden', '');
+      }
+    }
+  });
+
+  // Hide year groups that have no visible cards
+  document.querySelectorAll('.section-group').forEach(group => {
+    const visible = group.querySelectorAll('.pub-card:not([hidden])');
+    group.setAttribute('data-empty', visible.length === 0 ? 'true' : 'false');
+  });
 }
 </script>
 <script src="main.js" defer></script>
